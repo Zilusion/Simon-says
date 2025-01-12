@@ -1,0 +1,18 @@
+:root {
+	--background-color: var(--white);
+	--text-color: var(--black);
+	--font-main: 'Roboto';
+	--container-width: 1200px;
+	--container-padding: 80px;
+}
+/* Breakpoints */
+
+$xxs: 320px;
+$xs: 380px;
+$sm: 480px;
+$ms: 576px;
+$md: 768px;
+$ml: 880px;
+$lg: 1024px;
+$xl: 1200px;
+$xxl: 1440px;

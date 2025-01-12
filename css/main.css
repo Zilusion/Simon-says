@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+/*! modern-normalize v3.0.1 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*
+Document
+========
+*/
+/**
+Use a better box model (opinionated).
+*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3) */
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.15; /* 1. Correct the line height in all browsers. */
+  -webkit-text-size-adjust: 100%; /* 2. Prevent adjustments of font size after orientation changes in iOS. */
+  -moz-tab-size: 4;
+    -o-tab-size: 4;
+       tab-size: 4; /* 3. Use a more readable tab size (opinionated). */
+}
+
+/*
+Sections
+========
+*/
+body {
+  margin: 0; /* Remove the margin in all browsers. */
+}
+
+/*
+Text-level semantics
+====================
+*/
+/**
+Add the correct font weight in Chrome and Safari.
+*/
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+1. Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+2. Correct the odd 'em' font sizing in all browsers.
+*/
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+Add the correct font size in all browsers.
+*/
+small {
+  font-size: 80%;
+}
+
+/**
+Prevent 'sub' and 'sup' elements from affecting the line height in all browsers.
+*/
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+Tabular data
+============
+*/
+/**
+Correct table border color inheritance in Chrome and Safari. (https://issues.chromium.org/issues/40615503, https://bugs.webkit.org/show_bug.cgi?id=195016)
+*/
+table {
+  border-color: currentcolor;
+}
+
+/*
+Forms
+=====
+*/
+/**
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+*/
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+Correct the inability to style clickable types in iOS and Safari.
+*/
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+Remove the padding so developers are not caught out when they zero out 'fieldset' elements in all browsers.
+*/
+legend {
+  padding: 0;
+}
+
+/**
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+progress {
+  vertical-align: baseline;
+}
+
+/**
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to 'inherit' in Safari.
+*/
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/*
+Interactive
+===========
+*/
+/*
+Add the correct display in Chrome and Safari.
+*/
+summary {
+  display: list-item;
+}
+
+:root {
+  --background-color: var(--white);
+  --text-color: var(--black);
+  --font-main: "Roboto";
+  --container-width: 1200px;
+  --container-padding: 80px;
+}
+
+/* Breakpoints */
+.none {
+  display: none !important;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.no-scroll {
+  position: fixed;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+html {
+  font-family: var(--font-main);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  display: grid;
+  place-items: center;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
+.menu {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  justify-items: center;
+  max-height: 300px;
+}
+.menu__title {
+  font-size: 40px;
+  margin: 0;
+}
+.menu__label {
+  font-size: 20px;
+  margin: 0;
+  align-self: flex-end;
+}
+.menu__select {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.menu__select:disabled {
+  background-color: #f7f7f7;
+  pointer-events: none;
+}
+.menu__select:hover {
+  border-color: #888;
+}
+.menu__select:focus {
+  border-color: #333;
+  outline: none;
+}
+.menu__button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+.menu__button:disabled {
+  background-color: #555;
+  pointer-events: none;
+}
+.menu__button:hover {
+  background-color: #444;
+}
+.menu__button:active {
+  background-color: #666;
+}
+.menu__button:focus {
+  outline: none;
+}
+
+.game {
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+.game__info {
+  font-size: 18px;
+  color: #333;
+}
+.game__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.game__input:focus {
+  border-color: #666;
+  outline: none;
+}
+.game__button {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #333;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  width: 100%;
+  cursor: pointer;
+}
+.game__button:disabled {
+  background-color: #555;
+  pointer-events: none;
+}
+.game__button:hover {
+  background-color: #444;
+}
+.game__button:active {
+  background-color: #666;
+}
+.game__button:focus {
+  outline: none;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 10px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.keyboard__key {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s, scale 0.05s;
+}
+.keyboard__key:hover {
+  border-color: #666;
+}
+.keyboard__key:focus {
+  border-color: #666;
+  outline: none;
+}
+.keyboard__key:active {
+  scale: 0.9;
+}
+.keyboard__key--correct {
+  background-color: green;
+  color: #fff;
+}
+.keyboard__key--incorrect {
+  background-color: red;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .keyboard {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}/*# sourceMappingURL=main.css.map */
