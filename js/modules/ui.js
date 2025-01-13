@@ -142,4 +142,35 @@ export class UI {
 		key.classList.add(`keyboard__key${modifier}`);
 		setTimeout(() => key.classList.remove(`keyboard__key${modifier}`), 300);
 	}
+
+	
+	static addModalWindow(text, onOpenCallback, onCloseCallback) {
+		const modalWindow = UI.createElement('div', {
+			class: 'modal-window',
+		});
+		const overlay = UI.createElement('div', {
+			class: 'modal-overlay',
+		});
+		const modalText = UI.createElement('p', {}, text);
+		const modalButton = UI.createElement('button', {
+			class: 'modal-window__button',
+		}, 'OK');
+
+		modalWindow.appendChild(modalText);
+		modalWindow.appendChild(modalButton);
+		
+		overlay.appendChild(modalWindow);
+		document.body.appendChild(overlay);
+		document.body.classList.add('no-scroll');
+
+		if (onOpenCallback) onOpenCallback();
+
+		modalButton.addEventListener('click', () => {
+			overlay.remove();
+			document.body.classList.remove('no-scroll');
+
+			if (onCloseCallback) onCloseCallback();
+		});
+	}
+	
 }
